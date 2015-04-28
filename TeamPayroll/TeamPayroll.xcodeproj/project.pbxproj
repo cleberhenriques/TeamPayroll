@@ -13,6 +13,9 @@
 		BA4B5C311AF04AFA0022740E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4B5C301AF04AFA0022740E /* Images.xcassets */; };
 		BA4B5C341AF04AFA0022740E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4B5C321AF04AFA0022740E /* LaunchScreen.xib */; };
 		BA4B5C401AF04AFA0022740E /* TeamPayrollTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4B5C3F1AF04AFA0022740E /* TeamPayrollTests.m */; };
+		BA74723A1AF04EB300206D25 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7472391AF04EB300206D25 /* Team.m */; };
+		BA74723D1AF04F1A00206D25 /* Supporter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74723C1AF04F1A00206D25 /* Supporter.m */; };
+		BA7472401AF04F8200206D25 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74723F1AF04F8200206D25 /* Player.m */; };
 		D0B08CDB87BB0CDEC8662636 /* libPods-TeamPayroll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE95C50FCE25DC8B6A8993CB /* libPods-TeamPayroll.a */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +42,12 @@
 		BA4B5C391AF04AFA0022740E /* TeamPayrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeamPayrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4B5C3E1AF04AFA0022740E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA4B5C3F1AF04AFA0022740E /* TeamPayrollTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamPayrollTests.m; sourceTree = "<group>"; };
+		BA7472381AF04EB300206D25 /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Team.h; path = Model/Team.h; sourceTree = "<group>"; };
+		BA7472391AF04EB300206D25 /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Team.m; path = Model/Team.m; sourceTree = "<group>"; };
+		BA74723B1AF04F1A00206D25 /* Supporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Supporter.h; path = Model/Supporter.h; sourceTree = "<group>"; };
+		BA74723C1AF04F1A00206D25 /* Supporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Supporter.m; path = Model/Supporter.m; sourceTree = "<group>"; };
+		BA74723E1AF04F8200206D25 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Model/Player.h; sourceTree = "<group>"; };
+		BA74723F1AF04F8200206D25 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = Model/Player.m; sourceTree = "<group>"; };
 		DAC9FCC0B39321AAB56F90A9 /* Pods-TeamPayroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamPayroll.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamPayroll/Pods-TeamPayroll.release.xcconfig"; sourceTree = "<group>"; };
 		DE95C50FCE25DC8B6A8993CB /* libPods-TeamPayroll.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TeamPayroll.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -144,6 +153,12 @@
 		BA7472351AF04BFB00206D25 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BA7472381AF04EB300206D25 /* Team.h */,
+				BA7472391AF04EB300206D25 /* Team.m */,
+				BA74723B1AF04F1A00206D25 /* Supporter.h */,
+				BA74723C1AF04F1A00206D25 /* Supporter.m */,
+				BA74723E1AF04F8200206D25 /* Player.h */,
+				BA74723F1AF04F8200206D25 /* Player.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -298,7 +313,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA4B5C291AF04AFA0022740E /* AppDelegate.m in Sources */,
+				BA74723A1AF04EB300206D25 /* Team.m in Sources */,
+				BA74723D1AF04F1A00206D25 /* Supporter.m in Sources */,
 				BA4B5C261AF04AFA0022740E /* main.m in Sources */,
+				BA7472401AF04F8200206D25 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
