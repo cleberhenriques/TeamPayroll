@@ -18,6 +18,9 @@
 		BA7472401AF04F8200206D25 /* TPPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74723F1AF04F8200206D25 /* TPPlayer.m */; };
 		BA7472471AF0508400206D25 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7472461AF0508400206D25 /* DatabaseManager.m */; };
 		BA7472491AF0576600206D25 /* TeamPayroll.sql in Resources */ = {isa = PBXBuildFile; fileRef = BA7472481AF0576600206D25 /* TeamPayroll.sql */; };
+		BA7472531AF05FE700206D25 /* TPTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7472511AF05FE700206D25 /* TPTeamViewController.m */; };
+		BA7472591AF0605C00206D25 /* TPCellTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7472581AF0605C00206D25 /* TPCellTeam.m */; };
+		BA74725C1AF0626700206D25 /* TPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74725B1AF0626700206D25 /* TPCell.m */; };
 		D0B08CDB87BB0CDEC8662636 /* libPods-TeamPayroll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE95C50FCE25DC8B6A8993CB /* libPods-TeamPayroll.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +56,12 @@
 		BA7472451AF0508400206D25 /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseManager.h; path = Manager/DatabaseManager.h; sourceTree = "<group>"; };
 		BA7472461AF0508400206D25 /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseManager.m; path = Manager/DatabaseManager.m; sourceTree = "<group>"; };
 		BA7472481AF0576600206D25 /* TeamPayroll.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TeamPayroll.sql; sourceTree = "<group>"; };
+		BA7472511AF05FE700206D25 /* TPTeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPTeamViewController.m; path = Controller/TPTeamViewController.m; sourceTree = "<group>"; };
+		BA7472521AF05FE700206D25 /* TPTeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPTeamViewController.h; path = Controller/TPTeamViewController.h; sourceTree = "<group>"; };
+		BA7472571AF0605C00206D25 /* TPCellTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPCellTeam.h; path = Cell/TPCellTeam.h; sourceTree = "<group>"; };
+		BA7472581AF0605C00206D25 /* TPCellTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPCellTeam.m; path = Cell/TPCellTeam.m; sourceTree = "<group>"; };
+		BA74725A1AF0626700206D25 /* TPCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPCell.h; path = Cell/TPCell.h; sourceTree = "<group>"; };
+		BA74725B1AF0626700206D25 /* TPCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPCell.m; path = Cell/TPCell.m; sourceTree = "<group>"; };
 		DAC9FCC0B39321AAB56F90A9 /* Pods-TeamPayroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamPayroll.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamPayroll/Pods-TeamPayroll.release.xcconfig"; sourceTree = "<group>"; };
 		DE95C50FCE25DC8B6A8993CB /* libPods-TeamPayroll.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TeamPayroll.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,6 +127,7 @@
 			children = (
 				BA4B5C271AF04AFA0022740E /* AppDelegate.h */,
 				BA4B5C281AF04AFA0022740E /* AppDelegate.m */,
+				BA7472501AF05F4600206D25 /* Cell */,
 				BA7472411AF0501300206D25 /* Manager */,
 				BA7472351AF04BFB00206D25 /* Model */,
 				BA7472361AF04C0200206D25 /* View */,
@@ -180,6 +190,8 @@
 		BA7472371AF04C0F00206D25 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BA7472521AF05FE700206D25 /* TPTeamViewController.h */,
+				BA7472511AF05FE700206D25 /* TPTeamViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -191,6 +203,17 @@
 				BA7472461AF0508400206D25 /* DatabaseManager.m */,
 			);
 			name = Manager;
+			sourceTree = "<group>";
+		};
+		BA7472501AF05F4600206D25 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BA7472571AF0605C00206D25 /* TPCellTeam.h */,
+				BA7472581AF0605C00206D25 /* TPCellTeam.m */,
+				BA74725A1AF0626700206D25 /* TPCell.h */,
+				BA74725B1AF0626700206D25 /* TPCell.m */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,8 +354,11 @@
 			files = (
 				BA4B5C291AF04AFA0022740E /* AppDelegate.m in Sources */,
 				BA74723A1AF04EB300206D25 /* TPTeam.m in Sources */,
+				BA7472591AF0605C00206D25 /* TPCellTeam.m in Sources */,
 				BA74723D1AF04F1A00206D25 /* TPSupporter.m in Sources */,
 				BA4B5C261AF04AFA0022740E /* main.m in Sources */,
+				BA74725C1AF0626700206D25 /* TPCell.m in Sources */,
+				BA7472531AF05FE700206D25 /* TPTeamViewController.m in Sources */,
 				BA7472471AF0508400206D25 /* DatabaseManager.m in Sources */,
 				BA7472401AF04F8200206D25 /* TPPlayer.m in Sources */,
 			);

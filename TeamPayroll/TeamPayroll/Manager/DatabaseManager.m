@@ -8,7 +8,7 @@
 
 #import "DatabaseManager.h"
 #import "FMDatabase.h"
-
+#import "TPTeam.h"
 @interface DatabaseManager ()
 
 @property (strong, nonatomic) FMDatabase *database;
@@ -59,5 +59,31 @@
     NSString *content = [NSString stringWithContentsOfFile:path  encoding:NSUTF8StringEncoding error:NULL];
     
     return content;
+}
+
+- (NSArray *)retrieveAllTeams
+{
+    NSMutableArray *teams = [[NSMutableArray alloc] init];
+    BOOL success = [self.database open];
+    
+    if (success) {
+        NSString *sqlSelectQuery = [NSString stringWithFormat:@"SELECT * FROM team;"];
+        
+        FMResultSet *resultSet = [self.database executeQuery:sqlSelectQuery];
+        while([resultSet next]) {
+            
+            TPTeam *team = [TPTeam new];
+            team._id  = [resultSet intForColumn:@"id"];
+            team.name = [resultSet stringForColumn:@"name"];
+            
+            [teams addObject:team];
+        }
+        
+        [self.database close];
+    }else{
+        NSLog(@"Error opening DB");
+    }
+    
+    return teams;
 }
 @end

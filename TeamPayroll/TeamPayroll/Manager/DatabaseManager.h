@@ -14,4 +14,5 @@
 +(void)createDataBaseIfNeeded;
 +(void)deleteDatabase;
 
+- (NSArray *)retrieveAllTeams;
 @end

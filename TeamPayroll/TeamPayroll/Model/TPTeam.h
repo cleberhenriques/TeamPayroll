@@ -10,6 +10,7 @@
 
 @interface TPTeam : NSObject
 
+@property (assign, nonatomic) int _id;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSArray *players;
 @property (strong, nonatomic) NSArray *supporters;

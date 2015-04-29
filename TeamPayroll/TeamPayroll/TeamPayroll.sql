@@ -31,3 +31,11 @@ CREATE TABLE team_supporter
  id_team INTEGER REFERENCES team ( id ),
  id_player INTEGER REFERENCES player ( id )
 );
+
+
+INSERT INTO team (name) VALUES
+("Sport Club Internacional"),
+("Grêmio"),
+("Vasco"),
+("Corinthians"),
+("Xavante");
