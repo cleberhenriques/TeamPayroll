@@ -19,8 +19,9 @@
     [super setSelected:selected animated:animated];
 }
 
-- (void)configureWithObject:(id)object
+- (void)configureWithObject:(id)object andIndexPath:(NSIndexPath *)indexPath
 {
+    self.indexPath = indexPath;
     if ([object isKindOfClass:[TPTeam class]]) {
         self.labelTitle.text = [(TPTeam *) object name];
     }

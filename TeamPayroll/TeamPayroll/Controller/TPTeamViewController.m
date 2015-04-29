@@ -10,6 +10,7 @@
 #import "TPCell.h"
 #import "DatabaseManager.h"
 #import "TPTeam.h"
+#import "TPPlayerViewController.h"
 
 @interface TPTeamViewController ()
 
@@ -46,16 +47,20 @@
 {
     TPCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellTeam" forIndexPath:indexPath];
     
-    if (cell.delegate && [cell.delegate respondsToSelector:@selector(configureWithObject:)]) {
-        [cell.delegate configureWithObject:self.dataSource[indexPath.row]];
+    if (cell.delegate && [cell.delegate respondsToSelector:@selector(configureWithObject:andIndexPath:)]) {
+        [cell.delegate configureWithObject:self.dataSource[indexPath.row] andIndexPath:indexPath];
     }
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+    if ([sender isKindOfClass:[TPCell class]]) {
+        TPCell *cell = (TPCell *)sender;
+        TPPlayerViewController *destinationController = segue.destinationViewController;
+        destinationController.team = self.dataSource[cell.indexPath.row];
+    }
 }
 
 #pragma mark - Actions

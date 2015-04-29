@@ -13,6 +13,7 @@
 @interface TPCell : UITableViewCell
 
 @property (weak, nonatomic) id<TPCellDelegate> delegate;
+@property (weak, nonatomic) NSIndexPath *indexPath;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 
 @end
@@ -20,7 +21,7 @@
 @protocol TPCellDelegate <NSObject>
 
 @required
-- (void)configureWithObject:(id)object;
+- (void)configureWithObject:(id)object andIndexPath:(NSIndexPath *)indexPath;
 
 @end
 

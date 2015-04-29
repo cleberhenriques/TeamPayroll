@@ -43,6 +43,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="labelTitle" destination="bnY-6n-4md" id="KOd-ga-lOr"/>
+                                            <segue destination="zIw-FF-Uvb" kind="show" identifier="segueToPlayers" id="rAG-IB-c2e"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -76,6 +77,70 @@
             </objects>
             <point key="canvasLocation" x="1257" y="231"/>
         </scene>
+        <!--Players-->
+        <scene sceneID="9ZI-iT-xaB">
+            <objects>
+                <viewController title="Players" id="zIw-FF-Uvb" customClass="TPPlayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hD9-3g-xYC"/>
+                        <viewControllerLayoutGuide type="bottom" id="3P3-a2-lIj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8fJ-C7-4xN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="x4S-1u-5qQ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellPlayer" rowHeight="58" id="LnT-xH-nIl" customClass="TPCellPlayer">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LnT-xH-nIl" id="qfg-VJ-otN">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxP-Ff-8rI">
+                                                    <rect key="frame" x="16" y="18" width="568" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="geo-g9-Bdc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="rxP-Ff-8rI" secondAttribute="trailing" constant="16" id="GqT-zh-5Jh"/>
+                                                <constraint firstItem="rxP-Ff-8rI" firstAttribute="leading" secondItem="qfg-VJ-otN" secondAttribute="leading" constant="16" id="eAo-dl-sTg"/>
+                                                <constraint firstItem="rxP-Ff-8rI" firstAttribute="top" secondItem="qfg-VJ-otN" secondAttribute="top" constant="18" id="nrF-xA-6T8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelTitle" destination="rxP-Ff-8rI" id="HEc-by-HxP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zIw-FF-Uvb" id="0wu-WF-rOs"/>
+                                    <outlet property="delegate" destination="zIw-FF-Uvb" id="yf6-2Y-Q0E"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3P3-a2-lIj" firstAttribute="top" secondItem="x4S-1u-5qQ" secondAttribute="bottom" id="IJD-Cu-Qp1"/>
+                            <constraint firstItem="x4S-1u-5qQ" firstAttribute="top" secondItem="8fJ-C7-4xN" secondAttribute="top" id="LI9-ga-nxi"/>
+                            <constraint firstAttribute="trailing" secondItem="x4S-1u-5qQ" secondAttribute="trailing" id="b9K-1N-Gae"/>
+                            <constraint firstItem="x4S-1u-5qQ" firstAttribute="leading" secondItem="8fJ-C7-4xN" secondAttribute="leading" id="h2J-ZM-gYc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="x4S-1u-5qQ" id="Fbi-Qb-3lw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5dY-O8-7ya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2052" y="231"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xtn-a9-c3M">
             <objects>
@@ -92,7 +157,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZPa-kY-VVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="359" y="231"/>
+            <point key="canvasLocation" x="582" y="231"/>
         </scene>
     </scenes>
 </document>

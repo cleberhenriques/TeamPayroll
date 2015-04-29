@@ -118,11 +118,11 @@
     
     if (success) {
         NSString *sqlSelectQuery = [NSString stringWithFormat: @"SELECT player.id, "
-                                    "player.name, "
-                                    "player.age, "
-                                    "player.salary "
-                                    "FROM player "
-                                    "WHERE player.id_team = ?"];
+                                                                "player.name, "
+                                                                "player.age, "
+                                                                "player.salary "
+                                                                "FROM player "
+                                                                "WHERE player.id_team = ?"];
         
         FMResultSet *resultSet = [self.database executeQuery:sqlSelectQuery withArgumentsInArray:@[@(team._id)]];
         
