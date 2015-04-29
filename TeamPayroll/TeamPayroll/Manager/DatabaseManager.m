@@ -9,6 +9,8 @@
 #import "DatabaseManager.h"
 #import "FMDatabase.h"
 #import "TPTeam.h"
+#import "TPPlayer.h"
+
 @interface DatabaseManager ()
 
 @property (strong, nonatomic) FMDatabase *database;
@@ -50,6 +52,8 @@
     NSString *docsPath = [paths objectAtIndex:0];
     NSString *path = [docsPath stringByAppendingPathComponent:@"TeamPayroll.sqlite"];
     
+    NSLog(@"%@", path);
+    
     return path;
 }
 
@@ -61,13 +65,33 @@
     return content;
 }
 
-- (NSArray *)retrieveAllTeams
+- (NSArray *)retrieveAllTeamsOrderedBy:(TPOrderBy)order
 {
     NSMutableArray *teams = [[NSMutableArray alloc] init];
     BOOL success = [self.database open];
     
     if (success) {
-        NSString *sqlSelectQuery = [NSString stringWithFormat:@"SELECT * FROM team;"];
+        NSString *orderField;
+        
+        switch (order) {
+            case TPOrderByGreatestPayroll:
+                orderField = @"greatestPayroll";
+                break;
+            case TPOrderByBiggestNumOfSupporters:
+                orderField = @"biggestNumOfSupporters";
+                break;
+            default:
+                break;
+        }
+        
+        NSString *sqlSelectQuery = [NSString stringWithFormat: @"SELECT team.id, "
+                                                                "team.name, "
+                                                                "sum(DISTINCT player.salary) AS greatestPayroll, "
+                                                                "count(DISTINCT supporter.id) as biggestNumOfSupporters "
+                                                                "FROM team LEFT JOIN player on team.id = player.id_team "
+                                                                "LEFT JOIN supporter ON team.id = supporter.id_team "
+                                                                "GROUP BY team.name "
+                                                                "ORDER BY %@ DESC;", orderField];
         
         FMResultSet *resultSet = [self.database executeQuery:sqlSelectQuery];
         while([resultSet next]) {
@@ -86,4 +110,5 @@
     
     return teams;
 }
+
 @end

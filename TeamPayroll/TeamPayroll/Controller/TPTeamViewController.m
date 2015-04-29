@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *dataSource;
+@property (strong, nonatomic) UIAlertController *filterController;
 
 @end
 
@@ -51,15 +52,62 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%@", self.dataSource[indexPath.row]);
+}
+
+#pragma mark - Actions
+- (IBAction)didTouchedFilter:(id)sender {
+    [self presentViewController:self.filterController animated:YES completion:nil];
+}
+
 #pragma mark - Lazy Loading
 
 - (NSArray *)dataSource
 {
     if (!_dataSource) {
-        _dataSource = [[DatabaseManager shared] retrieveAllTeams];
+        _dataSource = [[DatabaseManager shared] retrieveAllTeamsOrderedBy:TPOrderByBiggestNumOfSupporters];
     }
     
     return _dataSource;
 }
 
+- (UIAlertController *)filterController
+{
+    if (!   _filterController) {
+        _filterController = [UIAlertController  alertControllerWithTitle:@"Filter"  message:@"Filter Teams By:"  preferredStyle:UIAlertControllerStyleActionSheet];
+        [_filterController addAction:[self actionFilterByPayroll]];
+        [_filterController addAction:[self actionFilterByNumberOfSupporters]];
+    }
+    return _filterController;
+}
+
+#pragma mark - UIAlertController actions
+
+- (UIAlertAction *)actionFilterByPayroll
+{
+    return [UIAlertAction
+             actionWithTitle:@"Greatest Payroll"
+             style:UIAlertActionStyleDefault
+             handler:^(UIAlertAction * action)
+             {
+                 self.dataSource = [[DatabaseManager shared] retrieveAllTeamsOrderedBy:TPOrderByGreatestPayroll];
+                 [_filterController dismissViewControllerAnimated:YES completion:nil];
+                 [self.tableView reloadData];
+             }];
+}
+
+- (UIAlertAction *)actionFilterByNumberOfSupporters
+{
+    return [UIAlertAction
+             actionWithTitle:@"Biggest Number of Supporters"
+             style:UIAlertActionStyleDefault
+             handler:^(UIAlertAction * action)
+             {
+                 self.dataSource = [[DatabaseManager shared] retrieveAllTeamsOrderedBy:TPOrderByBiggestNumOfSupporters];
+                 [_filterController dismissViewControllerAnimated:YES completion:nil];
+                 [self.tableView reloadData];
+             }];
+}
 @end

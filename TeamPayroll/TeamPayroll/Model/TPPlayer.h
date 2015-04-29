@@ -10,6 +10,7 @@
 
 @interface TPPlayer : NSObject
 
+@property (assign, nonatomic) int _id;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSNumber *age;
 @property (strong, nonatomic) NSNumber *salary;

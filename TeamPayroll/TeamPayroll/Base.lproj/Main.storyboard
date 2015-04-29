@@ -25,8 +25,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t4r-w7-XH2" id="hJc-0p-YYK">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Team Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnY-6n-4md">
-                                                    <rect key="frame" x="15" y="18" width="570" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnY-6n-4md">
+                                                    <rect key="frame" x="15" y="18" width="537" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="hph-MR-5fe"/>
                                                     </constraints>
@@ -60,7 +60,14 @@
                             <constraint firstItem="qwB-4W-YRj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="vJz-tv-qMB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Teams" id="Q85-0v-mYv"/>
+                    <navigationItem key="navigationItem" title="Teams" id="Q85-0v-mYv">
+                        <barButtonItem key="rightBarButtonItem" title="FILTER" id="i9g-Ni-0Ka">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didTouchedFilter:" destination="vXZ-lx-hvc" id="R8O-TA-GuL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="qwB-4W-YRj" id="kZA-9z-bJ3"/>
                     </connections>

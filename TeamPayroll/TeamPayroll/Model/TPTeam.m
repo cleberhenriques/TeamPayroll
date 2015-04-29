@@ -10,4 +10,13 @@
 
 @implementation TPTeam
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"[TPTeam] - Name: %@", self.name];
+}
+
+- (void)fetchPlayersWithCompletion:(void (^)(BOOL success))blockName
+{
+    
+}
 @end
