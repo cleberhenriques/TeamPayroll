@@ -15,4 +15,6 @@
 @property (strong, nonatomic) NSArray *players;
 @property (strong, nonatomic) NSArray *supporters;
 
+- (void)fetchPlayers;
+
 @end

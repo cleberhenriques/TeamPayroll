@@ -9,6 +9,7 @@
 #import "TPTeamViewController.h"
 #import "TPCell.h"
 #import "DatabaseManager.h"
+#import "TPTeam.h"
 
 @interface TPTeamViewController ()
 
@@ -54,7 +55,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%@", self.dataSource[indexPath.row]);
+    
 }
 
 #pragma mark - Actions

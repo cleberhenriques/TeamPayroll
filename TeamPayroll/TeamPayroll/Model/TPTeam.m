@@ -7,6 +7,7 @@
 //
 
 #import "TPTeam.h"
+#import "DatabaseManager.h"
 
 @implementation TPTeam
 
@@ -15,8 +16,8 @@
     return [NSString stringWithFormat:@"[TPTeam] - Name: %@", self.name];
 }
 
-- (void)fetchPlayersWithCompletion:(void (^)(BOOL success))blockName
+- (void)fetchPlayers
 {
-    
+    self.players = [[DatabaseManager shared] retrievePlayersOfTeam:self];
 }
 @end

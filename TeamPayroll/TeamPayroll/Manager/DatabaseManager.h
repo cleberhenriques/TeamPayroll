@@ -13,6 +13,8 @@ typedef NS_ENUM(NSInteger, TPOrderBy) {
     TPOrderByBiggestNumOfSupporters
 };
 
+@class TPTeam;
+
 @interface DatabaseManager : NSObject
 
 +(instancetype)shared;
@@ -20,4 +22,5 @@ typedef NS_ENUM(NSInteger, TPOrderBy) {
 +(void)deleteDatabase;
 
 - (NSArray *)retrieveAllTeamsOrderedBy:(TPOrderBy)order;
+- (NSArray *)retrievePlayersOfTeam:(TPTeam *)team;
 @end

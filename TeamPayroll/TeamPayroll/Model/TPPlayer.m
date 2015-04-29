@@ -10,5 +10,9 @@
 
 @implementation TPPlayer
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"[TPPlayer] Name: %@", self.name];
+}
 
 @end

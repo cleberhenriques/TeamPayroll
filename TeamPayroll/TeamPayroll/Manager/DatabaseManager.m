@@ -111,4 +111,38 @@
     return teams;
 }
 
+- (NSArray *)retrievePlayersOfTeam:(TPTeam *)team
+{
+    NSMutableArray *players = [[NSMutableArray alloc] init];
+    BOOL success = [self.database open];
+    
+    if (success) {
+        NSString *sqlSelectQuery = [NSString stringWithFormat: @"SELECT player.id, "
+                                    "player.name, "
+                                    "player.age, "
+                                    "player.salary "
+                                    "FROM player "
+                                    "WHERE player.id_team = ?"];
+        
+        FMResultSet *resultSet = [self.database executeQuery:sqlSelectQuery withArgumentsInArray:@[@(team._id)]];
+        
+        while([resultSet next]) {
+            
+            TPPlayer *player = [TPPlayer new];
+            player._id  = [resultSet intForColumn:@"id"];
+            player.name = [resultSet stringForColumn:@"name"];
+            player.age = [NSNumber numberWithInt:[resultSet intForColumn:@"age"]];
+            player.salary = [NSNumber numberWithInt:[resultSet intForColumn:@"salary"]];
+            [players addObject:player];
+        }
+        
+        [self.database close];
+    }else{
+        NSLog(@"Error opening DB");
+    }
+    
+    return players;
+}
+
+
 @end
