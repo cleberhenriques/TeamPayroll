@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Team : NSObject
+@interface TPTeam : NSObject
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSArray *players;

@@ -13,9 +13,9 @@
 		BA4B5C311AF04AFA0022740E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4B5C301AF04AFA0022740E /* Images.xcassets */; };
 		BA4B5C341AF04AFA0022740E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4B5C321AF04AFA0022740E /* LaunchScreen.xib */; };
 		BA4B5C401AF04AFA0022740E /* TeamPayrollTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4B5C3F1AF04AFA0022740E /* TeamPayrollTests.m */; };
-		BA74723A1AF04EB300206D25 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7472391AF04EB300206D25 /* Team.m */; };
-		BA74723D1AF04F1A00206D25 /* Supporter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74723C1AF04F1A00206D25 /* Supporter.m */; };
-		BA7472401AF04F8200206D25 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74723F1AF04F8200206D25 /* Player.m */; };
+		BA74723A1AF04EB300206D25 /* TPTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7472391AF04EB300206D25 /* TPTeam.m */; };
+		BA74723D1AF04F1A00206D25 /* TPSupporter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74723C1AF04F1A00206D25 /* TPSupporter.m */; };
+		BA7472401AF04F8200206D25 /* TPPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74723F1AF04F8200206D25 /* TPPlayer.m */; };
 		BA7472471AF0508400206D25 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7472461AF0508400206D25 /* DatabaseManager.m */; };
 		BA7472491AF0576600206D25 /* TeamPayroll.sql in Resources */ = {isa = PBXBuildFile; fileRef = BA7472481AF0576600206D25 /* TeamPayroll.sql */; };
 		D0B08CDB87BB0CDEC8662636 /* libPods-TeamPayroll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE95C50FCE25DC8B6A8993CB /* libPods-TeamPayroll.a */; };
@@ -44,12 +44,12 @@
 		BA4B5C391AF04AFA0022740E /* TeamPayrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeamPayrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4B5C3E1AF04AFA0022740E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA4B5C3F1AF04AFA0022740E /* TeamPayrollTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamPayrollTests.m; sourceTree = "<group>"; };
-		BA7472381AF04EB300206D25 /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Team.h; path = Model/Team.h; sourceTree = "<group>"; };
-		BA7472391AF04EB300206D25 /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Team.m; path = Model/Team.m; sourceTree = "<group>"; };
-		BA74723B1AF04F1A00206D25 /* Supporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Supporter.h; path = Model/Supporter.h; sourceTree = "<group>"; };
-		BA74723C1AF04F1A00206D25 /* Supporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Supporter.m; path = Model/Supporter.m; sourceTree = "<group>"; };
-		BA74723E1AF04F8200206D25 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Model/Player.h; sourceTree = "<group>"; };
-		BA74723F1AF04F8200206D25 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = Model/Player.m; sourceTree = "<group>"; };
+		BA7472381AF04EB300206D25 /* TPTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPTeam.h; path = Model/TPTeam.h; sourceTree = "<group>"; };
+		BA7472391AF04EB300206D25 /* TPTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPTeam.m; path = Model/TPTeam.m; sourceTree = "<group>"; };
+		BA74723B1AF04F1A00206D25 /* TPSupporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPSupporter.h; path = Model/TPSupporter.h; sourceTree = "<group>"; };
+		BA74723C1AF04F1A00206D25 /* TPSupporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPSupporter.m; path = Model/TPSupporter.m; sourceTree = "<group>"; };
+		BA74723E1AF04F8200206D25 /* TPPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPPlayer.h; path = Model/TPPlayer.h; sourceTree = "<group>"; };
+		BA74723F1AF04F8200206D25 /* TPPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPPlayer.m; path = Model/TPPlayer.m; sourceTree = "<group>"; };
 		BA7472451AF0508400206D25 /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseManager.h; path = Manager/DatabaseManager.h; sourceTree = "<group>"; };
 		BA7472461AF0508400206D25 /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseManager.m; path = Manager/DatabaseManager.m; sourceTree = "<group>"; };
 		BA7472481AF0576600206D25 /* TeamPayroll.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TeamPayroll.sql; sourceTree = "<group>"; };
@@ -160,12 +160,12 @@
 		BA7472351AF04BFB00206D25 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BA7472381AF04EB300206D25 /* Team.h */,
-				BA7472391AF04EB300206D25 /* Team.m */,
-				BA74723B1AF04F1A00206D25 /* Supporter.h */,
-				BA74723C1AF04F1A00206D25 /* Supporter.m */,
-				BA74723E1AF04F8200206D25 /* Player.h */,
-				BA74723F1AF04F8200206D25 /* Player.m */,
+				BA7472381AF04EB300206D25 /* TPTeam.h */,
+				BA7472391AF04EB300206D25 /* TPTeam.m */,
+				BA74723B1AF04F1A00206D25 /* TPSupporter.h */,
+				BA74723C1AF04F1A00206D25 /* TPSupporter.m */,
+				BA74723E1AF04F8200206D25 /* TPPlayer.h */,
+				BA74723F1AF04F8200206D25 /* TPPlayer.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -330,11 +330,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA4B5C291AF04AFA0022740E /* AppDelegate.m in Sources */,
-				BA74723A1AF04EB300206D25 /* Team.m in Sources */,
-				BA74723D1AF04F1A00206D25 /* Supporter.m in Sources */,
+				BA74723A1AF04EB300206D25 /* TPTeam.m in Sources */,
+				BA74723D1AF04F1A00206D25 /* TPSupporter.m in Sources */,
 				BA4B5C261AF04AFA0022740E /* main.m in Sources */,
 				BA7472471AF0508400206D25 /* DatabaseManager.m in Sources */,
-				BA7472401AF04F8200206D25 /* Player.m in Sources */,
+				BA7472401AF04F8200206D25 /* TPPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  Player.h
+//  Supporter.h
 //  TeamPayroll
 //
 //  Created by Cleber Henriques on 4/28/15.
@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Player : NSObject
+@interface TPSupporter : NSObject
 
 @property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSNumber *age;
-@property (strong, nonatomic) NSNumber *salary;
+@property (strong, nonatomic) NSString *registrationId;
+@property (assign, nonatomic) BOOL overdue;
 
 @end

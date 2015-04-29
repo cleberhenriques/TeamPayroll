@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Cleber Henriques. All rights reserved.
 //
 
-#import "Supporter.h"
+#import "TPSupporter.h"
 
-@implementation Supporter
+@implementation TPSupporter
 
 
 
