@@ -18,9 +18,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [DatabaseManager deleteDatabase];
     [DatabaseManager createDataBaseIfNeeded];
-    
     [self setAppearanceToElements];
     return YES;
 }
