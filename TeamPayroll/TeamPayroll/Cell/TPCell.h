@@ -13,7 +13,7 @@
 @interface TPCell : UITableViewCell
 
 @property (weak, nonatomic) id<TPCellDelegate> delegate;
-@property (weak, nonatomic) NSIndexPath *indexPath;
+@property (strong, nonatomic) NSIndexPath *indexPath;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 
 @end

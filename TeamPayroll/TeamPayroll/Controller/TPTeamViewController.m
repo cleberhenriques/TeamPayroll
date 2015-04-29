@@ -7,7 +7,7 @@
 //
 
 #import "TPTeamViewController.h"
-#import "TPCell.h"
+#import "TPCellTeam.h"
 #import "DatabaseManager.h"
 #import "TPTeam.h"
 #import "TPPlayerViewController.h"
@@ -45,7 +45,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TPCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellTeam" forIndexPath:indexPath];
+    TPCellTeam *cell = [tableView dequeueReusableCellWithIdentifier:@"CellTeam" forIndexPath:indexPath];
     
     if (cell.delegate && [cell.delegate respondsToSelector:@selector(configureWithObject:andIndexPath:)]) {
         [cell.delegate configureWithObject:self.dataSource[indexPath.row] andIndexPath:indexPath];
