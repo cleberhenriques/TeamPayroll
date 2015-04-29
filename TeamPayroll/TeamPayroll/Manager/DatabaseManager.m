@@ -123,7 +123,8 @@
         NSString *sqlSelectQuery = [NSString stringWithFormat: @"SELECT player.id, "
                                                                 "player.name, "
                                                                 "player.age, "
-                                                                "player.salary "
+                                                                "player.salary, "
+                                                                "player.imgUrl "
                                                                 "FROM player "
                                                                 "WHERE player.id_team = ?"];
         
@@ -134,6 +135,7 @@
             TPPlayer *player = [TPPlayer new];
             player._id  = [resultSet intForColumn:@"id"];
             player.name = [resultSet stringForColumn:@"name"];
+            player.imgUrl = [resultSet stringForColumn:@"imgUrl"];
             player.age = [NSNumber numberWithInt:[resultSet intForColumn:@"age"]];
             player.salary = [NSNumber numberWithDouble:[resultSet doubleForColumn:@"salary"]];
             [players addObject:player];

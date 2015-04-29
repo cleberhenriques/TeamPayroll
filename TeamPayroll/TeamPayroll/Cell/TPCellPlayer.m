@@ -9,7 +9,7 @@
 #import "TPCellPlayer.h"
 #import "TPPlayer.h"
 #import "NSNumber+Currency.h"
-
+#import "UIImageView+WebCache.h"
 @implementation TPCellPlayer
 
 - (void)awakeFromNib {
@@ -27,6 +27,7 @@
         self.labelTitle.text = [(TPPlayer *) object name];
         self.labelSalary.text = [[(TPPlayer *) object salary] toLocaleCurrency];
         self.labelAge.text = [NSString stringWithFormat:@"%@ Years", [(TPPlayer *) object age]];
+        [self.imagePlayer sd_setImageWithURL:[NSURL URLWithString:[(TPPlayer *) object imgUrl]] placeholderImage:[UIImage imageNamed:@"PersonPlaceholder"]];
     }
 }
 @end

@@ -13,5 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *labelAge;
 @property (weak, nonatomic) IBOutlet UILabel *labelSalary;
+@property (weak, nonatomic) IBOutlet UIImageView *imagePlayer;
 
 @end

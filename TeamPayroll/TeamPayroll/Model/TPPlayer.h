@@ -14,5 +14,6 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSNumber *age;
 @property (strong, nonatomic) NSNumber *salary;
+@property (strong, nonatomic) NSString *imgUrl;
 
 @end
