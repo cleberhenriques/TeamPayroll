@@ -10,6 +10,7 @@
 
 @interface TPSupporter : NSObject
 
+@property (assign, nonatomic) int _id;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *registrationId;
 @property (assign, nonatomic) BOOL overdue;

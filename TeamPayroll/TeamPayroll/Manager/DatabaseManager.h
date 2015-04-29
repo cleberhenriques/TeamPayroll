@@ -24,4 +24,5 @@ typedef NS_ENUM(NSInteger, TPOrderBy) {
 
 - (NSArray *)retrieveAllTeamsOrderedBy:(TPOrderBy)order;
 - (NSArray *)retrievePlayersOfTeam:(TPTeam *)team;
+- (NSArray *)retrieveSupportersOfTeam:(TPTeam *)team;
 @end

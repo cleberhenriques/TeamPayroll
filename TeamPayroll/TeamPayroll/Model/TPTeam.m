@@ -21,6 +21,11 @@
     self.players = [[DatabaseManager shared] retrievePlayersOfTeam:self];
 }
 
+- (void)fetchSupporters
+{
+    self.supporters = [[DatabaseManager shared] retrieveSupportersOfTeam:self];
+}
+
 #pragma mark - Lazy Loading
 
 -(NSArray *)players
@@ -29,5 +34,13 @@
         [self fetchPlayers];
     }
     return _players;
+}
+
+-(NSArray *)supporters
+{
+    if (!_supporters) {
+        [self fetchSupporters];
+    }
+    return _supporters;
 }
 @end

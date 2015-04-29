@@ -23,6 +23,8 @@
 		BA74725C1AF0626700206D25 /* TPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74725B1AF0626700206D25 /* TPCell.m */; };
 		BA74725F1AF0A21900206D25 /* TPCellPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74725E1AF0A21900206D25 /* TPCellPlayer.m */; };
 		BA7472621AF0A3C800206D25 /* TPPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7472611AF0A3C800206D25 /* TPPlayerViewController.m */; };
+		BA7472651AF0CDED00206D25 /* TPCellSupporter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7472641AF0CDED00206D25 /* TPCellSupporter.m */; };
+		BA7472681AF0CFFE00206D25 /* TPSupporterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7472671AF0CFFE00206D25 /* TPSupporterViewController.m */; };
 		D0B08CDB87BB0CDEC8662636 /* libPods-TeamPayroll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE95C50FCE25DC8B6A8993CB /* libPods-TeamPayroll.a */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,10 @@
 		BA74725E1AF0A21900206D25 /* TPCellPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPCellPlayer.m; path = Cell/TPCellPlayer.m; sourceTree = "<group>"; };
 		BA7472601AF0A3C800206D25 /* TPPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPPlayerViewController.h; path = Controller/TPPlayerViewController.h; sourceTree = "<group>"; };
 		BA7472611AF0A3C800206D25 /* TPPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPPlayerViewController.m; path = Controller/TPPlayerViewController.m; sourceTree = "<group>"; };
+		BA7472631AF0CDED00206D25 /* TPCellSupporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPCellSupporter.h; path = Cell/TPCellSupporter.h; sourceTree = "<group>"; };
+		BA7472641AF0CDED00206D25 /* TPCellSupporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPCellSupporter.m; path = Cell/TPCellSupporter.m; sourceTree = "<group>"; };
+		BA7472661AF0CFFE00206D25 /* TPSupporterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPSupporterViewController.h; path = Controller/TPSupporterViewController.h; sourceTree = "<group>"; };
+		BA7472671AF0CFFE00206D25 /* TPSupporterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPSupporterViewController.m; path = Controller/TPSupporterViewController.m; sourceTree = "<group>"; };
 		DAC9FCC0B39321AAB56F90A9 /* Pods-TeamPayroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamPayroll.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamPayroll/Pods-TeamPayroll.release.xcconfig"; sourceTree = "<group>"; };
 		DE95C50FCE25DC8B6A8993CB /* libPods-TeamPayroll.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TeamPayroll.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -200,6 +206,8 @@
 				BA7472511AF05FE700206D25 /* TPTeamViewController.m */,
 				BA7472601AF0A3C800206D25 /* TPPlayerViewController.h */,
 				BA7472611AF0A3C800206D25 /* TPPlayerViewController.m */,
+				BA7472661AF0CFFE00206D25 /* TPSupporterViewController.h */,
+				BA7472671AF0CFFE00206D25 /* TPSupporterViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -216,12 +224,14 @@
 		BA7472501AF05F4600206D25 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				BA7472571AF0605C00206D25 /* TPCellTeam.h */,
-				BA7472581AF0605C00206D25 /* TPCellTeam.m */,
 				BA74725A1AF0626700206D25 /* TPCell.h */,
 				BA74725B1AF0626700206D25 /* TPCell.m */,
+				BA7472571AF0605C00206D25 /* TPCellTeam.h */,
+				BA7472581AF0605C00206D25 /* TPCellTeam.m */,
 				BA74725D1AF0A21900206D25 /* TPCellPlayer.h */,
 				BA74725E1AF0A21900206D25 /* TPCellPlayer.m */,
+				BA7472631AF0CDED00206D25 /* TPCellSupporter.h */,
+				BA7472641AF0CDED00206D25 /* TPCellSupporter.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -370,7 +380,9 @@
 				BA4B5C261AF04AFA0022740E /* main.m in Sources */,
 				BA74725C1AF0626700206D25 /* TPCell.m in Sources */,
 				BA74725F1AF0A21900206D25 /* TPCellPlayer.m in Sources */,
+				BA7472651AF0CDED00206D25 /* TPCellSupporter.m in Sources */,
 				BA7472531AF05FE700206D25 /* TPTeamViewController.m in Sources */,
+				BA7472681AF0CFFE00206D25 /* TPSupporterViewController.m in Sources */,
 				BA7472471AF0508400206D25 /* DatabaseManager.m in Sources */,
 				BA7472401AF04F8200206D25 /* TPPlayer.m in Sources */,
 			);
@@ -502,6 +514,7 @@
 				INFOPLIST_FILE = TeamPayroll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -513,6 +526,7 @@
 				INFOPLIST_FILE = TeamPayroll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

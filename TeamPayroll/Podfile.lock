@@ -4,11 +4,19 @@ PODS:
   - FMDB/common (2.5)
   - FMDB/standard (2.5):
     - FMDB/common
+  - SDWebImage (3.7.2):
+    - SDWebImage/Core (= 3.7.2)
+  - SDWebImage/Core (3.7.2)
+  - UIColor-ColorWithHexAndAlpha (1.2.0)
 
 DEPENDENCIES:
   - FMDB
+  - SDWebImage (~> 3.7)
+  - UIColor-ColorWithHexAndAlpha (~> 1.2)
 
 SPEC CHECKSUMS:
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  UIColor-ColorWithHexAndAlpha: 9b7e9e8db3518367f8a5df503fd9a20113ee3d7f
 
 COCOAPODS: 0.36.4

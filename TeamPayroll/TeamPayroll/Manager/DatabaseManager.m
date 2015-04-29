@@ -10,6 +10,7 @@
 #import "FMDatabase.h"
 #import "TPTeam.h"
 #import "TPPlayer.h"
+#import "TPSupporter.h"
 
 @interface DatabaseManager ()
 
@@ -133,7 +134,7 @@
             player._id  = [resultSet intForColumn:@"id"];
             player.name = [resultSet stringForColumn:@"name"];
             player.age = [NSNumber numberWithInt:[resultSet intForColumn:@"age"]];
-            player.salary = [NSNumber numberWithInt:[resultSet intForColumn:@"salary"]];
+            player.salary = [NSNumber numberWithDouble:[resultSet doubleForColumn:@"salary"]];
             [players addObject:player];
         }
         
@@ -145,5 +146,37 @@
     return players;
 }
 
+- (NSArray *)retrieveSupportersOfTeam:(TPTeam *)team
+{
+    NSMutableArray *supporters = [[NSMutableArray alloc] init];
+    BOOL success = [self.database open];
+    
+    if (success) {
+        NSString *sqlSelectQuery = [NSString stringWithFormat: @"SELECT supporter.id, "
+                                    "supporter.name, "
+                                    "supporter.registrationId, "
+                                    "supporter.overdue "
+                                    "FROM supporter "
+                                    "WHERE supporter.id_team = ?"];
+        
+        FMResultSet *resultSet = [self.database executeQuery:sqlSelectQuery withArgumentsInArray:@[@(team._id)]];
+        
+        while([resultSet next]) {
+            
+            TPSupporter *supporter = [TPSupporter new];
+            supporter._id  = [resultSet intForColumn:@"id"];
+            supporter.name = [resultSet stringForColumn:@"name"];
+            supporter.registrationId = [resultSet stringForColumn:@"registrationId"];
+            supporter.overdue = [resultSet intForColumn:@"overdue"];
+            [supporters addObject:supporter];
+        }
+        
+        [self.database close];
+    }else{
+        NSLog(@"Error opening DB");
+    }
+    
+    return supporters;
+}
 
 @end

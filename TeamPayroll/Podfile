@@ -4,6 +4,8 @@
 target 'TeamPayroll' do
 
 pod 'FMDB'
+pod 'SDWebImage', '~> 3.7'
+pod 'UIColor-ColorWithHexAndAlpha', '~> 1.2'
 
 end
 

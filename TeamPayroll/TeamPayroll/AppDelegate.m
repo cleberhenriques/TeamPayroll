@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DatabaseManager.h"
+#import "UIColor+ColorWithHexAndAlpha.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +21,7 @@
     [DatabaseManager deleteDatabase];
     [DatabaseManager createDataBaseIfNeeded];
     
+    [self setAppearanceToElements];
     return YES;
 }
 
@@ -43,6 +45,23 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)setAppearanceToElements
+{
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    UIColor *baseColor = [UIColor colorWithHex:@"469CB5" andAlpha:1.0];
+    
+    // Changes appearance of NavigationController
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleDefault];
+    [[UINavigationBar appearance] setBarTintColor:baseColor];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    
+    //[[UITabBar appearance] setBarTintColor:baseColor];
+    //[[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setTintColor:baseColor];
 }
 
 @end
