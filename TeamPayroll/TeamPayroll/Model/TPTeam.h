@@ -14,6 +14,8 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSArray *players;
 @property (strong, nonatomic) NSArray *supporters;
+@property (strong, nonatomic) NSNumber *payroll;
+@property (strong, nonatomic) NSNumber *countOfSupporters;
 
 - (void)fetchPlayers;
 

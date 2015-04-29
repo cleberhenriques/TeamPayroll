@@ -11,5 +11,8 @@
 
 @interface TPCellTeam : TPCell <TPCellDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *labelPayroll;
+@property (weak, nonatomic) IBOutlet UILabel *labelCountOfSupporters;
+
 @end
 

@@ -63,6 +63,11 @@
     }
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 130.0f;
+}
+
 #pragma mark - Actions
 - (IBAction)didTouchedFilter:(id)sender {
     [self presentViewController:self.filterController animated:YES completion:nil];
@@ -85,6 +90,7 @@
         _filterController = [UIAlertController  alertControllerWithTitle:@"Filter"  message:@"Filter Teams By:"  preferredStyle:UIAlertControllerStyleActionSheet];
         [_filterController addAction:[self actionFilterByPayroll]];
         [_filterController addAction:[self actionFilterByNumberOfSupporters]];
+        [_filterController addAction:[self actionFilterBothDesc]];
     }
     return _filterController;
 }
@@ -115,5 +121,18 @@
                  [_filterController dismissViewControllerAnimated:YES completion:nil];
                  [self.tableView reloadData];
              }];
+}
+
+- (UIAlertAction *)actionFilterBothDesc
+{
+    return [UIAlertAction
+            actionWithTitle:@"Greatest Payroll & Biggest Number of Supporters"
+            style:UIAlertActionStyleDefault
+            handler:^(UIAlertAction * action)
+            {
+                self.dataSource = [[DatabaseManager shared] retrieveAllTeamsOrderedBy:TPOrderByGreatestPayrollAndBiggestNumOfSupporters];
+                [_filterController dismissViewControllerAnimated:YES completion:nil];
+                [self.tableView reloadData];
+            }];
 }
 @end

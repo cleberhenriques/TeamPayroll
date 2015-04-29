@@ -24,6 +24,13 @@
     self.indexPath = indexPath;
     if ([object isKindOfClass:[TPTeam class]]) {
         self.labelTitle.text = [(TPTeam *) object name];
+        
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
+        NSString *numberAsString = [numberFormatter stringFromNumber:[(TPTeam *) object payroll]];
+        
+        self.labelPayroll.text = numberAsString;
+        self.labelCountOfSupporters.text = [NSString stringWithFormat:@"%@ Supporters", [(TPTeam *) object countOfSupporters]];
     }
 }
 

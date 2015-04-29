@@ -11,4 +11,7 @@
 
 @interface TPCellPlayer : TPCell <TPCellDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *labelAge;
+@property (weak, nonatomic) IBOutlet UILabel *labelSalary;
+
 @end

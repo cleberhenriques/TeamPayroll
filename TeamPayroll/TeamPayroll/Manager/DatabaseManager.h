@@ -10,7 +10,8 @@
 
 typedef NS_ENUM(NSInteger, TPOrderBy) {
     TPOrderByGreatestPayroll,
-    TPOrderByBiggestNumOfSupporters
+    TPOrderByBiggestNumOfSupporters,
+    TPOrderByGreatestPayrollAndBiggestNumOfSupporters
 };
 
 @class TPTeam;

@@ -24,6 +24,13 @@
     self.indexPath = indexPath;
     if ([object isKindOfClass:[TPPlayer class]]) {
         self.labelTitle.text = [(TPPlayer *) object name];
+        
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
+        NSString *salaryFormatted = [numberFormatter stringFromNumber:[(TPPlayer *) object salary]];
+        
+        self.labelSalary.text = salaryFormatted;
+        self.labelAge.text = [NSString stringWithFormat:@"%@ Years", [(TPPlayer *) object age]];
     }
 }
 @end

@@ -52,8 +52,6 @@
     NSString *docsPath = [paths objectAtIndex:0];
     NSString *path = [docsPath stringByAppendingPathComponent:@"TeamPayroll.sqlite"];
     
-    NSLog(@"%@", path);
-    
     return path;
 }
 
@@ -71,27 +69,29 @@
     BOOL success = [self.database open];
     
     if (success) {
-        NSString *orderField;
+        NSString *orderString;
         
         switch (order) {
             case TPOrderByGreatestPayroll:
-                orderField = @"greatestPayroll";
+                orderString = @"ORDER BY payroll DESC;";
                 break;
             case TPOrderByBiggestNumOfSupporters:
-                orderField = @"biggestNumOfSupporters";
+                orderString = @"ORDER BY countSupporters DESC;";
                 break;
+            case TPOrderByGreatestPayrollAndBiggestNumOfSupporters:
+                orderString = @"ORDER BY payroll DESC, countSupporters DESC;";
             default:
                 break;
         }
         
-        NSString *sqlSelectQuery = [NSString stringWithFormat: @"SELECT team.id, "
-                                                                "team.name, "
-                                                                "sum(DISTINCT player.salary) AS greatestPayroll, "
-                                                                "count(DISTINCT supporter.id) as biggestNumOfSupporters "
-                                                                "FROM team LEFT JOIN player on team.id = player.id_team "
-                                                                "LEFT JOIN supporter ON team.id = supporter.id_team "
-                                                                "GROUP BY team.name "
-                                                                "ORDER BY %@ DESC;", orderField];
+        NSString *sqlSelectQuery = [NSString stringWithFormat: @"SELECT team.id, team.name, "
+                                                                "IFNULL(p.payroll,0) AS payroll, "
+                                                                "IFNULL(s.countSupporters,0) AS countSupporters "
+                                                                "FROM team "
+                                                                "LEFT JOIN (SELECT player.id_team, sum(player.salary) AS payroll FROM player GROUP BY player.id_team) p "
+                                                                "ON (team.id = p.id_team) "
+                                                                "LEFT JOIN (SELECT supporter.id_team, count(supporter.id) AS countSupporters FROM supporter GROUP BY supporter.id_team) s "
+                                                                "ON (team.id = s.id_team) %@", orderString];
         
         FMResultSet *resultSet = [self.database executeQuery:sqlSelectQuery];
         while([resultSet next]) {
@@ -99,7 +99,8 @@
             TPTeam *team = [TPTeam new];
             team._id  = [resultSet intForColumn:@"id"];
             team.name = [resultSet stringForColumn:@"name"];
-            
+            team.payroll = [NSNumber numberWithDouble:[resultSet doubleForColumn:@"payroll"]];
+            team.countOfSupporters = [NSNumber numberWithInt:[resultSet intForColumn:@"countSupporters"]];
             [teams addObject:team];
         }
         
