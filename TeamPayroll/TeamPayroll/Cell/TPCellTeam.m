@@ -28,8 +28,8 @@
         self.labelTitle.text = [(TPTeam *) object name];
         self.labelPayroll.text = [[(TPTeam *) object payroll] toLocaleCurrency];
         self.labelCountOfSupporters.text = [NSString stringWithFormat:@"%@ Supporters", [(TPTeam *) object countOfSupporters]];
-        
-        [self.imageLogo sd_setImageWithURL:[NSURL URLWithString:[(TPTeam *) object imgUrl]] placeholderImage:[UIImage imageNamed:@"ImagePlaceholder"]];
+        [self.imageLogo sd_setImageWithURL:[NSURL URLWithString:[(TPTeam *) object imgUrl]]
+                          placeholderImage:[UIImage imageNamed:@"ImagePlaceholder"]];
     }
 }
 

@@ -14,8 +14,6 @@
 {
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
-    [numberFormatter setCurrencyDecimalSeparator:@","];
-    [numberFormatter setCurrencyGroupingSeparator:@"."];
     NSString *numberAsString = [numberFormatter stringFromNumber:self];
     
     return numberAsString;
