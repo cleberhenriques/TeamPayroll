@@ -9,6 +9,8 @@
 #import "TPCellTeam.h"
 #import "TPTeam.h"
 #import "UIImageView+WebCache.h"
+#import "NSNumber+Currency.h"
+
 @implementation TPCellTeam
 
 - (void)awakeFromNib {
@@ -24,14 +26,7 @@
     self.indexPath = indexPath;
     if ([object isKindOfClass:[TPTeam class]]) {
         self.labelTitle.text = [(TPTeam *) object name];
-        
-        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-        [numberFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
-        [numberFormatter setCurrencyDecimalSeparator:@","];
-        [numberFormatter setCurrencyGroupingSeparator:@"."];
-        NSString *numberAsString = [numberFormatter stringFromNumber:[(TPTeam *) object payroll]];
-        
-        self.labelPayroll.text = numberAsString;
+        self.labelPayroll.text = [[(TPTeam *) object payroll] toLocaleCurrency];
         self.labelCountOfSupporters.text = [NSString stringWithFormat:@"%@ Supporters", [(TPTeam *) object countOfSupporters]];
         
         [self.imageLogo sd_setImageWithURL:[NSURL URLWithString:[(TPTeam *) object imgUrl]] placeholderImage:[UIImage imageNamed:@"ImagePlaceholder"]];

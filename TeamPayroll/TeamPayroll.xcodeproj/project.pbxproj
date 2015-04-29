@@ -25,6 +25,7 @@
 		BA7472621AF0A3C800206D25 /* TPPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7472611AF0A3C800206D25 /* TPPlayerViewController.m */; };
 		BA7472651AF0CDED00206D25 /* TPCellSupporter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7472641AF0CDED00206D25 /* TPCellSupporter.m */; };
 		BA7472681AF0CFFE00206D25 /* TPSupporterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7472671AF0CFFE00206D25 /* TPSupporterViewController.m */; };
+		BA74726C1AF14F5D00206D25 /* NSNumber+Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74726B1AF14F5D00206D25 /* NSNumber+Currency.m */; };
 		D0B08CDB87BB0CDEC8662636 /* libPods-TeamPayroll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE95C50FCE25DC8B6A8993CB /* libPods-TeamPayroll.a */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,8 @@
 		BA7472641AF0CDED00206D25 /* TPCellSupporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPCellSupporter.m; path = Cell/TPCellSupporter.m; sourceTree = "<group>"; };
 		BA7472661AF0CFFE00206D25 /* TPSupporterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPSupporterViewController.h; path = Controller/TPSupporterViewController.h; sourceTree = "<group>"; };
 		BA7472671AF0CFFE00206D25 /* TPSupporterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPSupporterViewController.m; path = Controller/TPSupporterViewController.m; sourceTree = "<group>"; };
+		BA74726A1AF14F5D00206D25 /* NSNumber+Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Currency.h"; sourceTree = "<group>"; };
+		BA74726B1AF14F5D00206D25 /* NSNumber+Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Currency.m"; sourceTree = "<group>"; };
 		DAC9FCC0B39321AAB56F90A9 /* Pods-TeamPayroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamPayroll.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamPayroll/Pods-TeamPayroll.release.xcconfig"; sourceTree = "<group>"; };
 		DE95C50FCE25DC8B6A8993CB /* libPods-TeamPayroll.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TeamPayroll.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -240,6 +243,8 @@
 		BA7472691AF1244500206D25 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				BA74726A1AF14F5D00206D25 /* NSNumber+Currency.h */,
+				BA74726B1AF14F5D00206D25 /* NSNumber+Currency.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA74726C1AF14F5D00206D25 /* NSNumber+Currency.m in Sources */,
 				BA4B5C291AF04AFA0022740E /* AppDelegate.m in Sources */,
 				BA74723A1AF04EB300206D25 /* TPTeam.m in Sources */,
 				BA7472591AF0605C00206D25 /* TPCellTeam.m in Sources */,
