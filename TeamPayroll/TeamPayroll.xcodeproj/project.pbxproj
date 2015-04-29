@@ -16,6 +16,8 @@
 		BA74723A1AF04EB300206D25 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7472391AF04EB300206D25 /* Team.m */; };
 		BA74723D1AF04F1A00206D25 /* Supporter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74723C1AF04F1A00206D25 /* Supporter.m */; };
 		BA7472401AF04F8200206D25 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74723F1AF04F8200206D25 /* Player.m */; };
+		BA7472471AF0508400206D25 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7472461AF0508400206D25 /* DatabaseManager.m */; };
+		BA7472491AF0576600206D25 /* TeamPayroll.sql in Resources */ = {isa = PBXBuildFile; fileRef = BA7472481AF0576600206D25 /* TeamPayroll.sql */; };
 		D0B08CDB87BB0CDEC8662636 /* libPods-TeamPayroll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE95C50FCE25DC8B6A8993CB /* libPods-TeamPayroll.a */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,9 @@
 		BA74723C1AF04F1A00206D25 /* Supporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Supporter.m; path = Model/Supporter.m; sourceTree = "<group>"; };
 		BA74723E1AF04F8200206D25 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Model/Player.h; sourceTree = "<group>"; };
 		BA74723F1AF04F8200206D25 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = Model/Player.m; sourceTree = "<group>"; };
+		BA7472451AF0508400206D25 /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseManager.h; path = Manager/DatabaseManager.h; sourceTree = "<group>"; };
+		BA7472461AF0508400206D25 /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseManager.m; path = Manager/DatabaseManager.m; sourceTree = "<group>"; };
+		BA7472481AF0576600206D25 /* TeamPayroll.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TeamPayroll.sql; sourceTree = "<group>"; };
 		DAC9FCC0B39321AAB56F90A9 /* Pods-TeamPayroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamPayroll.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamPayroll/Pods-TeamPayroll.release.xcconfig"; sourceTree = "<group>"; };
 		DE95C50FCE25DC8B6A8993CB /* libPods-TeamPayroll.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TeamPayroll.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -113,6 +118,7 @@
 			children = (
 				BA4B5C271AF04AFA0022740E /* AppDelegate.h */,
 				BA4B5C281AF04AFA0022740E /* AppDelegate.m */,
+				BA7472411AF0501300206D25 /* Manager */,
 				BA7472351AF04BFB00206D25 /* Model */,
 				BA7472361AF04C0200206D25 /* View */,
 				BA7472371AF04C0F00206D25 /* Controller */,
@@ -127,6 +133,7 @@
 		BA4B5C231AF04AFA0022740E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BA7472481AF0576600206D25 /* TeamPayroll.sql */,
 				BA4B5C241AF04AFA0022740E /* Info.plist */,
 				BA4B5C251AF04AFA0022740E /* main.m */,
 			);
@@ -175,6 +182,15 @@
 			children = (
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		BA7472411AF0501300206D25 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				BA7472451AF0508400206D25 /* DatabaseManager.h */,
+				BA7472461AF0508400206D25 /* DatabaseManager.m */,
+			);
+			name = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +278,7 @@
 				BA4B5C2F1AF04AFA0022740E /* Main.storyboard in Resources */,
 				BA4B5C341AF04AFA0022740E /* LaunchScreen.xib in Resources */,
 				BA4B5C311AF04AFA0022740E /* Images.xcassets in Resources */,
+				BA7472491AF0576600206D25 /* TeamPayroll.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +333,7 @@
 				BA74723A1AF04EB300206D25 /* Team.m in Sources */,
 				BA74723D1AF04F1A00206D25 /* Supporter.m in Sources */,
 				BA4B5C261AF04AFA0022740E /* main.m in Sources */,
+				BA7472471AF0508400206D25 /* DatabaseManager.m in Sources */,
 				BA7472401AF04F8200206D25 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

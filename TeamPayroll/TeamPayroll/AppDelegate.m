@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DatabaseManager.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [DatabaseManager deleteDatabase];
+    [DatabaseManager createDataBaseIfNeeded];
+    
     return YES;
 }
 
