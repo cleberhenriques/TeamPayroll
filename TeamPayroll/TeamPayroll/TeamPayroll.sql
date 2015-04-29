@@ -19,15 +19,14 @@ CREATE TABLE supporter
 CREATE TABLE team 
 ( 
  id INTEGER PRIMARY KEY,
- name TEXT 
+ name TEXT,
+ imgUrl TEXT
 );
 
-INSERT INTO team (id, name) VALUES
-(1,"Sport Club Internacional"),
-(2,"Grêmio"),
-(3,"Vasco"),
-(4,"Corinthians"),
-(5,"Xavante");
+INSERT INTO team (id, name, imgUrl) VALUES
+(1,"Sport Club Internacional", "https://hdlogo.files.wordpress.com/2011/11/internacional-logo.png"),
+(2,"Grêmio", "http://nova99.com.br/copasantiago/timeslogo/gremio.png"),
+(3,"Vasco", "https://hdlogo.files.wordpress.com/2011/11/vasco-da-gama-logo.png");
 
 INSERT INTO player (name, age, salary, id_team) VALUES
 ("Andrés D\'alessando", 30, 500000, 1),

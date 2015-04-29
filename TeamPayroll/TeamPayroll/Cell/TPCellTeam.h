@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *labelPayroll;
 @property (weak, nonatomic) IBOutlet UILabel *labelCountOfSupporters;
+@property (weak, nonatomic) IBOutlet UIImageView *imageLogo;
 
 @end
 

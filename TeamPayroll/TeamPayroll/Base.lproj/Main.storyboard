@@ -81,6 +81,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imageLogo" destination="dFc-x7-keG" id="kf2-Q6-Ugh"/>
                                             <outlet property="labelCountOfSupporters" destination="ziv-AN-W9o" id="adX-pZ-gIU"/>
                                             <outlet property="labelPayroll" destination="fSM-0W-INs" id="Yth-DO-5lU"/>
                                             <outlet property="labelTitle" destination="bnY-6n-4md" id="KOd-ga-lOr"/>

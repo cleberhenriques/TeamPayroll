@@ -85,7 +85,7 @@
                 break;
         }
         
-        NSString *sqlSelectQuery = [NSString stringWithFormat: @"SELECT team.id, team.name, "
+        NSString *sqlSelectQuery = [NSString stringWithFormat: @"SELECT team.id, team.name, team.imgUrl, "
                                                                 "IFNULL(p.payroll,0) AS payroll, "
                                                                 "IFNULL(s.countSupporters,0) AS countSupporters "
                                                                 "FROM team "
@@ -100,6 +100,7 @@
             TPTeam *team = [TPTeam new];
             team._id  = [resultSet intForColumn:@"id"];
             team.name = [resultSet stringForColumn:@"name"];
+            team.imgUrl = [resultSet stringForColumn:@"imgUrl"];
             team.payroll = [NSNumber numberWithDouble:[resultSet doubleForColumn:@"payroll"]];
             team.countOfSupporters = [NSNumber numberWithInt:[resultSet intForColumn:@"countSupporters"]];
             [teams addObject:team];

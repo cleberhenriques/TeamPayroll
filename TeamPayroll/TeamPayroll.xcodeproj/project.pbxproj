@@ -139,6 +139,7 @@
 			children = (
 				BA4B5C271AF04AFA0022740E /* AppDelegate.h */,
 				BA4B5C281AF04AFA0022740E /* AppDelegate.m */,
+				BA7472691AF1244500206D25 /* Category */,
 				BA7472501AF05F4600206D25 /* Cell */,
 				BA7472411AF0501300206D25 /* Manager */,
 				BA7472351AF04BFB00206D25 /* Model */,
@@ -234,6 +235,13 @@
 				BA7472641AF0CDED00206D25 /* TPCellSupporter.m */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		BA7472691AF1244500206D25 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

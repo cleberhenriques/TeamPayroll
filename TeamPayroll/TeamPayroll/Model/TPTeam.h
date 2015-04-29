@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSArray *supporters;
 @property (strong, nonatomic) NSNumber *payroll;
 @property (strong, nonatomic) NSNumber *countOfSupporters;
+@property (strong, nonatomic) NSString *imgUrl;
 
 - (void)fetchPlayers;
 
